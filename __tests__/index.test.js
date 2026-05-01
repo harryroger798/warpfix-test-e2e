@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide } = require("../src/index");
+const { add, subtract, multiply, divide, power, modulo, factorial } = require("../src/index");
 
 describe("Math utilities", () => {
   test("add returns correct sum", () => {
@@ -23,5 +23,20 @@ describe("Math utilities", () => {
 
   test("divide throws on zero", () => {
     expect(() => divide(1, 0)).toThrow("Division by zero");
+  });
+
+  test("power returns correct result", () => {
+    expect(power(2, 3)).toBe(8);
+    expect(power(5, 0)).toBe(1);
+  });
+
+  test("modulo returns correct remainder", () => {
+    expect(modulo(10, 3)).toBe(1);
+    expect(modulo(15, 5)).toBe(0);
+  });
+
+  test("factorial returns correct result", () => {
+    expect(factorial(5)).toBe(120);
+    expect(factorial(0)).toBe(1);
   });
 });
